@@ -121,6 +121,7 @@
         <license-maven-plugin-version>1.8</license-maven-plugin-version>
         <rhq-agent-plugin-plugin-version>1.0</rhq-agent-plugin-plugin-version>
         <versioneye-maven-plugin-version>3.1.0</versioneye-maven-plugin-version>
+        <maven-dependency-plugin>2.2</maven-dependency-plugin>
 
         <!-- Plugin dependancy versions -->
         <jaxb-version>2.1.13</jaxb-version>
@@ -172,7 +173,7 @@
                     <version>${maven-surefire-plugin-version}</version>
                 </plugin>
                 <plugin>
-                    <!-- http://maven.apache.org/plugins/maven-dependency-plugin/ -->
+                    <!-- https://github.com/apache/servicemix-maven-plugins/tree/trunk/depends-maven-plugin -->
                     <groupId>org.apache.servicemix.tooling</groupId>
                     <artifactId>depends-maven-plugin</artifactId>
                     <version>${depends-maven-plugin-version}</version>
@@ -274,6 +275,12 @@
                     <groupId>com.versioneye</groupId>
                     <artifactId>versioneye-maven-plugin</artifactId>
                     <version>${versioneye-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-dependency-plugin/ -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
