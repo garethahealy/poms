@@ -123,6 +123,7 @@
         <versioneye-maven-plugin-version>3.1.0</versioneye-maven-plugin-version>
         <maven-dependency-plugin>2.2</maven-dependency-plugin>
         <maven-jar-plugin-version>2.5</maven-jar-plugin-version>
+        <sonar-maven-plugin-version>2.5</sonar-maven-plugin-version>
 
         <!-- Plugin dependancy versions -->
         <jaxb-version>2.1.13</jaxb-version>
@@ -288,6 +289,12 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${maven-jar-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/sonar-maven-plugin -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar-maven-plugin-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
