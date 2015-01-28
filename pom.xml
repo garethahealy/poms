@@ -431,12 +431,18 @@
                 <scope>compile</scope>
             </dependency>
 
-            <!-- JAAS -->
+            <!-- Karaf -->
             <dependency>
                 <groupId>org.apache.karaf.jaas</groupId>
                 <artifactId>org.apache.karaf.jaas.jasypt</artifactId>
                 <version>${karaf-version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.karaf.management</groupId>
+                <artifactId>org.apache.karaf.management.server</artifactId>
+                <version>${karaf-version}</version>
+                <scope>test</scope>
             </dependency>
 
             <!-- Camel other -->
