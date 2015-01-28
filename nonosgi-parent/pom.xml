@@ -176,12 +176,10 @@
                 <configuration>
                     <check>
                         <haltOnFailure>false</haltOnFailure>
-                        <branchRate>85</branchRate>
-                        <lineRate>85</lineRate>
-                        <totalBranchRate>85</totalBranchRate>
-                        <totalLineRate>85</totalLineRate>
-                        <packageLineRate>85</packageLineRate>
-                        <packageBranchRate>85</packageBranchRate>
+                        <lineRate>70</lineRate>
+                        <totalLineRate>70</totalLineRate>
+                        <branchRate>70</branchRate>
+                        <totalBranchRate>70</totalBranchRate>
                     </check>
                 </configuration>
                 <executions>
