@@ -67,17 +67,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Bundle-SymbolicName>${project.groupId}.${project.artifactId}.source</Bundle-SymbolicName>
-                            <Bundle-Version>${build.osgi.version.clean}</Bundle-Version>
-                            <Eclipse-SourceBundle>
-                                ${project.groupId}.${project.artifactId};version="${build.osgi.version.clean}"
-                            </Eclipse-SourceBundle>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -93,9 +82,6 @@
                 <!--<configuration>
                     <argLine>-javaagent:${ekstazi-m2-path}.jar=mode=junit</argLine>
                 </configuration>-->
-                <configuration>
-                    <argLine>-Djava.library.path=${project.build.directory}/depends</argLine>
-                </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.ekstazi</groupId>
