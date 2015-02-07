@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.garethahealy</groupId>
-    <artifactId>root-pom</artifactId>
+    <artifactId>projects-pom</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <name>${project.artifactId}</name>
@@ -27,8 +27,11 @@
     </prerequisites>
 
     <modules>
-        <module>nonosgi-parent</module>
+        <module>plugins-parent</module>
+        <module>commons-parent</module>
+        <module>osgi-plugins-parent</module>
         <module>osgi-parent</module>
+        <module>camel-parent</module>
     </modules>
 
     <properties>
