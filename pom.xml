@@ -23,7 +23,7 @@
     <scm>
         <connection>scm:git:https://github.com/garethahealy/poms/tree/master</connection>
         <developerConnection>scm:git:https://github.com/garethahealy/poms/tree/master</developerConnection>
-        <url>scm:git:https://github.com/garethahealy/poms/tree/master</url>
+        <url>https://github.com/garethahealy/poms/tree/master</url>
     </scm>
 
     <licenses>
