@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.garethahealy</groupId>
         <artifactId>commons-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath>../commons-parent</relativePath>
     </parent>
     <artifactId>osgi-plugins-parent</artifactId>
@@ -33,6 +33,8 @@
             ${build.osgi.import.additional},
             *
         </build.osgi.import.pkg>
+        <build.osgi.import.service/>
+        <build.osgi.export.service/>
         <build.osgi.export.pkg/>
         <build.osgi.activator/>
         <build.osgi.failok>false</build.osgi.failok>
@@ -43,8 +45,10 @@
         <build.osgi.split.pkg>-split-package:=first</build.osgi.split.pkg>
         <build.osgi.import>${build.osgi.import.pkg}</build.osgi.import>
         <build.osgi.dynamic/>
+        <build.osgi.embed/>
+        <build.osgi.exclude.dependencies/>
         <build.osgi.symbolic.name>${project.groupId}.${project.artifactId}</build.osgi.symbolic.name>
-        <build.osgi.exclude.dependencies>false</build.osgi.exclude.dependencies>
+        <build.osgi.implementation.title>${project.groupId}</build.osgi.implementation.title>
     </properties>
 
     <build>
