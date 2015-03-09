@@ -12,12 +12,7 @@
     <artifactId>plugins-parent</artifactId>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
-
-    <properties>
-        <!-- We use the below to find the checkstyle/findbugs files -->
-        <poms-project-path>/Users/garethah/Documents/github/garethahealy/poms</poms-project-path>
-    </properties>
-
+    
     <build>
         <plugins>
             <!-- General plugins which make the JARs -->
@@ -82,11 +77,18 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.garethahealy</groupId>
+                        <artifactId>building-tools</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <effort>Max</effort>
                     <threshold>Low</threshold>
                     <xmlOutput>true</xmlOutput>
-                    <excludeFilterFile>${poms-project-path}/building-tools/findbugs-exclude.xml</excludeFilterFile>
+                    <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
                 </configuration>
                 <executions>
                     <execution>
@@ -99,13 +101,20 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.garethahealy</groupId>
+                        <artifactId>building-tools</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>validate</id>
                         <phase>validate</phase>
                         <configuration>
-                            <configLocation>${poms-project-path}/building-tools/camel-checkstyle.xml</configLocation>
-                            <suppressionsLocation>${poms-project-path}/building-tools/camel-checkstyle-suppressions.xml</suppressionsLocation>
+                            <configLocation>camel-checkstyle.xml</configLocation>
+                            <suppressionsLocation>camel-checkstyle-suppressions.xml</suppressionsLocation>
                             <consoleOutput>true</consoleOutput>
                             <failOnViolation>true</failOnViolation>
                             <failsOnError>true</failsOnError>

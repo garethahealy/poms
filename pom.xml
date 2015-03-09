@@ -39,6 +39,7 @@
     </prerequisites>
 
     <modules>
+        <module>building-tools</module>
         <module>plugins-parent</module>
         <module>commons-parent</module>
         <module>osgi-plugins-parent</module>
