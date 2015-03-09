@@ -1,3 +1,5 @@
+![Image of Travis-CI](https://travis-ci.org/garethahealy/poms.svg?branch=master)
+
 toplevel-poms
 ========================
 Collection of POMs which are used by all projects
@@ -13,3 +15,5 @@ mvn sonar:sonar
 Release to mvn central
 =======================
 http://java.dzone.com/articles/deploy-maven-central
+
+
