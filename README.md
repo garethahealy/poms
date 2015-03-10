@@ -12,6 +12,11 @@ How to build projects
 - mvn cobertura:cobertura
 - mvn sonar:sonar
 
+How to deploy
+========================
+- mvn versions:set -DnewVersion=X.Y.Z
+- mvn deploy -Prelease-ossrh
+
 Release to mvn central
 =======================
 http://java.dzone.com/articles/deploy-maven-central

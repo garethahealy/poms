@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.garethahealy</groupId>
+        <artifactId>commons-parent</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+        <relativePath>../commons-parent</relativePath>
+    </parent>
+    <artifactId>brms-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+
+    <properties>
+
+    </properties>
+
+    <dependencies>
+        <!-- add this dependency if there are Model Classes present (created by Data Modeler in the business-central) -->
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+            <version>${drools-version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <dependencies>
+                    <dependency>
+                        <!-- add this dependency if there are Processes located in the project-->
+                        <groupId>org.jbpm</groupId>
+                        <artifactId>jbpm-bpmn2</artifactId>
+                        <version>${jbpm-version}</version>
+                    </dependency>
+                    <!-- add this dependency if there are Decision tables located in the project-->
+                    <dependency>
+                        <groupId>org.drools</groupId>
+                        <artifactId>drools-decisiontables</artifactId>
+                        <version>${drools-version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

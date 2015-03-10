@@ -12,7 +12,7 @@
     <groupId>com.garethahealy</groupId>
     <artifactId>projects-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
 
     <organization>
@@ -45,6 +45,7 @@
         <module>osgi-plugins-parent</module>
         <module>osgi-parent</module>
         <module>camel-parent</module>
+        <module>brms-parent</module>
     </modules>
 
     <properties>
@@ -70,9 +71,12 @@
         <fabric8-number-version>1.0.0</fabric8-number-version>
         <fabric8-version>${fabric8-number-version}.${redhat-short-version}</fabric8-version>
 
+        <!-- JBoss BRMS versions -->
+        <jbpm-version>6.0.3-redhat-6</jbpm-version>
+        <drools-version>6.0.3-redhat-6</drools-version>
+
         <maven-version>3.2.3</maven-version>
         <rhq-version>4.13.0</rhq-version>
-        <!-- JON v3.3 -->
 
         <!-- Other components -->
         <junit-version>4.12</junit-version>
@@ -112,9 +116,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java-runtime>1.7</java-runtime>
-
-        <!-- SCM / Repos -->
-        <nexus-ip>localhost:8081</nexus-ip>
 
         <!-- Plugin versions -->
         <maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
@@ -255,6 +256,19 @@
                                         <ignore/>
                                     </action>
                                 </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>license-maven-plugin</artifactId>
+                                        <versionRange>[${license-maven-plugin-version},)</versionRange>
+                                        <goals>
+                                            <goal>update-file-header</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
@@ -348,6 +362,12 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${versions-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- https://github.com/droolsjbpm/drools/tree/master/kie-maven-plugin -->
+                    <groupId>org.kie</groupId>
+                    <artifactId>kie-maven-plugin</artifactId>
+                    <version>${jbpm-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -632,12 +652,6 @@
     </dependencyManagement>
 
     <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>releases</id>
-            <name>libs-release</name>
-            <url>http://${nexus-ip}/nexus/content/repositories/releases</url>
-        </repository>
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>
             <id>snapshots</id>
