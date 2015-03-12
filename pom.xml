@@ -74,6 +74,7 @@
         <!-- JBoss BRMS versions -->
         <jbpm-version>6.0.3-redhat-6</jbpm-version>
         <drools-version>6.0.3-redhat-6</drools-version>
+        <kie-maven-plugin-version>6.2.0.Final</kie-maven-plugin-version>
 
         <maven-version>3.2.3</maven-version>
         <rhq-version>4.13.0</rhq-version>
@@ -369,7 +370,7 @@
                     <!-- https://github.com/droolsjbpm/drools/tree/master/kie-maven-plugin -->
                     <groupId>org.kie</groupId>
                     <artifactId>kie-maven-plugin</artifactId>
-                    <version>${jbpm-version}</version>
+                    <version>${kie-maven-plugin-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
