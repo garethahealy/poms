@@ -465,6 +465,13 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+                <!-- feature: cxf-jaxrs -->
+                <version>${cxf-version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-rt-transports-http</artifactId>
                 <!-- feature: cxf-http -->
                 <version>${cxf-version}</version>
