@@ -757,6 +757,19 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <repositories>
+        <repository>
+            <id>repository.redhat.com</id>
+            <name>RedHat TechPreview Repository</name>
+            <url>http://maven.repository.redhat.com/techpreview/all/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
     <!--
     <repositories>
         <repository>
