@@ -769,13 +769,34 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
+        <repository>
+            <id>fusesource.jboss.com</id>
+            <name>Fuse Jboss Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
             <id>repository.redhat.com</id>
             <name>RedHat TechPreview Repository</name>
             <url>http://maven.repository.redhat.com/techpreview/all/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+        <pluginRepository>
+            <id>fusesource.jboss.com</id>
+            <name>Fuse Jboss Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
