@@ -6,12 +6,16 @@
     <parent>
         <groupId>com.garethahealy</groupId>
         <artifactId>projects-pom</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <relativePath>../</relativePath>
     </parent>
     <artifactId>plugins-parent</artifactId>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
+
+    <properties>
+        <building-tools-verson>1.0.4</building-tools-verson>
+    </properties>
 
     <build>
         <plugins>
@@ -69,7 +73,8 @@
                     <dependency>
                         <groupId>com.garethahealy</groupId>
                         <artifactId>building-tools</artifactId>
-                        <version>${project.version}</version>
+                        <version>${building-tools-verson}</version>
+                        <scope>compile</scope>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -93,7 +98,7 @@
                     <dependency>
                         <groupId>com.garethahealy</groupId>
                         <artifactId>building-tools</artifactId>
-                        <version>${project.version}</version>
+                        <version>${building-tools-verson}</version>
                         <scope>compile</scope>
                     </dependency>
                 </dependencies>

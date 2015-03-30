@@ -12,7 +12,7 @@
     <groupId>com.garethahealy</groupId>
     <artifactId>projects-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>${project.artifactId}</name>
 
     <organization>
