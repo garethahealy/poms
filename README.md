@@ -1,4 +1,5 @@
 ![Image of Travis-CI](https://travis-ci.org/garethahealy/poms.svg?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/5519a65931b89bd07b000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5519a65931b89bd07b000002)
 
 poms
 ========================
@@ -16,10 +17,5 @@ How to deploy
 ========================
 - mvn versions:set -DnewVersion=X.Y.Z
 - mvn deploy -Prelease-ossrh
-
-Release to mvn central
-=======================
-http://java.dzone.com/articles/deploy-maven-central
-http://central.sonatype.org/pages/ossrh-guide.html
 
 
