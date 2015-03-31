@@ -13,9 +13,6 @@
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
 
-    <properties>
-        <jar-plugin-mainClass/>
-    </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
