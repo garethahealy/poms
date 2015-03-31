@@ -29,4 +29,6 @@
 
     <!-- Suppress any checks for classes we've had to import, but don't own -->
     <suppress checks=".*" files=".+[\\\/]org[\\\/].+\.java"/>
+
+    <suppress checks=".*" files=".+[\\\/]Application.java"/>
 </suppressions>

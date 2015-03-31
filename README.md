@@ -5,7 +5,11 @@ poms
 ========================
 Collection of POMs which are used by all projects i am working on
 
-projects-pom <= plugins-parent <= commons-parent <= osgi-plugins-parent <= osgi-parent <= camel-parent
+projects-pom <= plugins-parent <= commons-parent <= osgi-plugins-parent <= osgi-parent 
+
+<= camel-parent
+<= brms-parent
+<= springboot-parent
 
 How to build projects
 ========================

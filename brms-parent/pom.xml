@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.garethahealy</groupId>
-        <artifactId>commons-parent</artifactId>
-        <version>1.0.4</version>
-        <relativePath>../commons-parent</relativePath>
+        <artifactId>osgi-plugins-parent</artifactId>
+        <version>1.0.5-SNAPSHOT</version>
+        <relativePath>../osgi-plugins-parent</relativePath>
     </parent>
     <artifactId>brms-parent</artifactId>
     <packaging>pom</packaging>
