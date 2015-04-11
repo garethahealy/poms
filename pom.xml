@@ -439,6 +439,11 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot-version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-codegen-plugin</artifactId>
+                    <version>${cxf-number-version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
