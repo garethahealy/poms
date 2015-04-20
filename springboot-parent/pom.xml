@@ -13,6 +13,19 @@
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- http://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html -->
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot-version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

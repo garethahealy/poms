@@ -15,9 +15,183 @@
 
     <properties>
         <building-tools-verson>1.0.5-SNAPSHOT</building-tools-verson>
+        <!-- Plugin versions -->
+        <maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
+        <maven-source-plugin-version>2.1.1</maven-source-plugin-version>
+        <maven-antrun-plugin-version>1.2</maven-antrun-plugin-version>
+        <maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
+        <maven-surefire-plugin-version>2.18.1</maven-surefire-plugin-version>
+        <depends-maven-plugin-version>1.2</depends-maven-plugin-version>
+        <properties-maven-plugin-version>1.0-alpha-2</properties-maven-plugin-version>
+        <ant-contrib-version>1.0b3</ant-contrib-version>
+        <ant-optional-version>1.5.3-1</ant-optional-version>
+        <maven-resources-plugin-version>2.6</maven-resources-plugin-version>
+        <build-helper-maven-plugin-version>1.7</build-helper-maven-plugin-version>
+        <fabric8-maven-plugin-version>1.1.0.CR5</fabric8-maven-plugin-version>
+        <exec-maven-plugin-version>1.3.2</exec-maven-plugin-version>
+        <findbugs-maven-plugin-version>3.0.1</findbugs-maven-plugin-version>
+        <maven-checkstyle-plugin-version>2.15</maven-checkstyle-plugin-version>
+        <ekstazi-core-version>4.3.1</ekstazi-core-version>
+        <ekstazi-m2-path>${user.home}/.m2/repository/org/ekstazi/org.ekstazi.core/${ekstazi-core-version}/org.ekstazi.core-${ekstazi-core-version}</ekstazi-m2-path>
+        <license-maven-plugin-version>1.8</license-maven-plugin-version>
+        <rhq-agent-plugin-plugin-version>1.0</rhq-agent-plugin-plugin-version>
+        <versioneye-maven-plugin-version>3.1.0</versioneye-maven-plugin-version>
+        <maven-dependency-plugin>2.2</maven-dependency-plugin>
+        <maven-jar-plugin-version>2.5</maven-jar-plugin-version>
+        <sonar-maven-plugin-version>2.5</sonar-maven-plugin-version>
+        <cobertura-maven-plugin-version>2.6</cobertura-maven-plugin-version>
+        <maven-shade-plugin-version>2.3</maven-shade-plugin-version>
+        <maven-javadoc-plugin-version>2.10.1</maven-javadoc-plugin-version>
+        <maven-gpg-plugin-version>1.6</maven-gpg-plugin-version>
+        <nexus-staging-maven-plugin-version>1.6.3</nexus-staging-maven-plugin-version>
+        <versions-maven-plugin-version>2.1</versions-maven-plugin-version>
+        <spring-boot-version>1.2.3.RELEASE</spring-boot-version>
+        <maven-war-plugin-version>2.6</maven-war-plugin-version>
+
+        <!-- Plugin dependancy versions -->
+        <jaxb-version>2.1.13</jaxb-version>
+        <jaxb-api-version>2.1</jaxb-api-version>
     </properties>
 
+    <!-- Build plugins -->
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-resources-plugin/ -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-source-plugin/ -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/build-helper-maven-plugin/ -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/surefire/maven-surefire-plugin -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/exec-maven-plugin/ -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://openjpa.apache.org/enhancement-with-maven.html -->
+                    <groupId>org.apache.openjpa</groupId>
+                    <artifactId>openjpa-maven-plugin</artifactId>
+                    <version>${openjpa-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/findbugs-maven-plugin-3.0.0/ -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${findbugs-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-checkstyle-plugin/index.html -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven-checkstyle-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/license-maven-plugin/ -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${license-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-dependency-plugin/ -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-jar-plugin/ -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/sonar-maven-plugin -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/cobertura-maven-plugin/ -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>${cobertura-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://maven.apache.org/plugins/maven-shade-plugin/ -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${maven-shade-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- https://github.com/versioneye/versioneye_maven_plugin -->
+                    <groupId>com.versioneye</groupId>
+                    <artifactId>versioneye-maven-plugin</artifactId>
+                    <version>${versioneye-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://rhq-project.github.io/rhq-agent-plugin-plugin/ -->
+                    <groupId>org.rhq.maven.plugins</groupId>
+                    <artifactId>rhq-agent-plugin-plugin</artifactId>
+                    <version>${rhq-agent-plugin-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- https://www.eclipse.org/m2e/documentation/m2e-execution-not-covered.html -->
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>license-maven-plugin</artifactId>
+                                        <versionRange>[${license-maven-plugin-version},)</versionRange>
+                                        <goals>
+                                            <goal>update-file-header</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <!-- General plugins which make the JARs -->
             <plugin>

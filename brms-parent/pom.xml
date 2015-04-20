@@ -13,28 +13,25 @@
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.kie</groupId>
-            <artifactId>kie-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-compiler</artifactId>
-        </dependency>
-
-        <!-- JavaEE -->
-        <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.ejb</groupId>
-            <artifactId>jboss-ejb-api_3.1_spec</artifactId>
-        </dependency>
-    </dependencies>
+    <properties>
+        <!-- JBoss BRMS versions -->
+        <jbpm-version>6.0.3-redhat-6</jbpm-version>
+        <drools-version>6.0.3-redhat-6</drools-version>
+        <kie-maven-plugin-version>6.2.0.Final</kie-maven-plugin-version>
+    </properties>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- https://github.com/droolsjbpm/drools/tree/master/kie-maven-plugin -->
+                    <groupId>org.kie</groupId>
+                    <artifactId>kie-maven-plugin</artifactId>
+                    <version>${kie-maven-plugin-version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.kie</groupId>
@@ -57,5 +54,56 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- Components -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- TODO
+            <dependency>
+                <groupId>org.jboss.bom.brms</groupId>
+                <artifactId>jboss-javaee-6.0-with-brms-bpmsuite</artifactId>
+                <version>${drools-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            -->
+
+            <!-- BRMS -->
+            <dependency>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-api</artifactId>
+                <version>${drools-version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-compiler</artifactId>
+                <version>${drools-version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- BRMS -->
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+        </dependency>
+
+        <!-- JavaEE -->
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.ejb</groupId>
+            <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

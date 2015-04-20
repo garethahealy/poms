@@ -51,7 +51,63 @@
         <build.osgi.implementation.title>${project.groupId}</build.osgi.implementation.title>
     </properties>
 
+    <!-- Build plugins -->
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- https://github.com/apache/servicemix-maven-plugins/tree/trunk/depends-maven-plugin -->
+                    <groupId>org.apache.servicemix.tooling</groupId>
+                    <artifactId>depends-maven-plugin</artifactId>
+                    <version>${depends-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://felix.apache.org/site/apache-felix-maven-bundle-plugin-bnd.html -->
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${maven-bundle-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- https://www.eclipse.org/m2e/documentation/m2e-execution-not-covered.html -->
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.felix</groupId>
+                                        <artifactId>maven-bundle-plugin</artifactId>
+                                        <versionRange>[${maven-bundle-plugin-version},)</versionRange>
+                                        <goals>
+                                            <goal>cleanVersions</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.servicemix.tooling</groupId>
+                                        <artifactId>depends-maven-plugin</artifactId>
+                                        <versionRange>[${depends-maven-plugin-version},)</versionRange>
+                                        <goals>
+                                            <goal>generate-depends-file</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
