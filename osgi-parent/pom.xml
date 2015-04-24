@@ -19,6 +19,12 @@
         <camel-version>2.12.0.redhat-610379</camel-version>
         <cxf-version>2.7.0.redhat-610379</cxf-version>
         <activemq-version>5.9.0.redhat-610379</activemq-version>
+        <karaf-version>2.3.0.redhat-610379</karaf-version>
+        <fabric8-version>1.0.0.redhat-379</fabric8-version>
+
+        <jndi-feature-version>1.0.0</jndi-feature-version>
+        <jpa-feature-version>1.1</jpa-feature-version> <!-- geronimo-jpa.version -->
+        <transaction-feature-version>1.0.1.redhat-610379</transaction-feature-version> <!-- aries-transaction-version>-->
 
         <!-- BOM -->
         <jboss-fuse-bom-version>${fuse-version}</jboss-fuse-bom-version>
