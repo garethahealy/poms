@@ -45,6 +45,7 @@
         <module>osgi-plugins-parent</module>
         <module>osgi-parent</module>
         <module>camel-parent</module>
+        <module>eap-parent</module>
         <module>brms-parent</module>
         <module>springboot-parent</module>
     </modules>
