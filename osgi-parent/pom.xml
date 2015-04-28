@@ -14,45 +14,25 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <!-- Properties from BOM -->
-        <fuse-version>6.1.0.redhat-379</fuse-version>
-        <camel-version>2.12.0.redhat-610379</camel-version>
-        <cxf-version>2.7.0.redhat-610379</cxf-version>
-        <activemq-version>5.9.0.redhat-610379</activemq-version>
-        <karaf-version>2.3.0.redhat-610379</karaf-version>
-        <fabric8-version>1.0.0.redhat-379</fabric8-version>
-
-        <jndi-feature-version>1.0.0</jndi-feature-version>
-        <jpa-feature-version>1.1</jpa-feature-version> <!-- geronimo-jpa.version -->
-        <transaction-feature-version>1.0.1.redhat-610379</transaction-feature-version> <!-- aries-transaction-version>-->
-
-        <!-- BOM -->
-        <jboss-fuse-bom-version>${fuse-version}</jboss-fuse-bom-version>
-
-        <!-- Other -->
-        <aries-jpa-blueprint-version>1.0.1.redhat-610379</aries-jpa-blueprint-version>
-        <aries-transaction-blueprint-version>1.0.1.redhat-610379</aries-transaction-blueprint-version>
-        <aries-whiteboard-version>1.0.0</aries-whiteboard-version>
-        <asm-all-version>4.0</asm-all-version>
-        <cglib-version>3.1_1</cglib-version>
-        <serp-version>1.14.1_1</serp-version>
-
-        <!-- Ranges for versions -->
-        <persistence-range-version>"[1.1,2)"</persistence-range-version>
-        <dbcp-range-version>"[2.0,2.1)"</dbcp-range-version>
-        <javassist-range-version>"[3.18,4)"</javassist-range-version>
-        <hibernate-range-version>"[4.2,4.3)"</hibernate-range-version>
+        <!-- JBoss Fuse BOM properties -->
+        <osgi-version>5.0.0</osgi-version>
+        <osgi-compendium-version>4.3.1</osgi-compendium-version>
     </properties>
 
-    <!-- Components -->
     <dependencyManagement>
         <dependencies>
+            <!-- Core OSGi -->
             <dependency>
-                <groupId>org.jboss.fuse.bom</groupId>
-                <artifactId>jboss-fuse-parent</artifactId>
-                <version>${jboss-fuse-bom-version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.core</artifactId>
+                <version>${osgi-version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.compendium</artifactId>
+                <version>${osgi-compendium-version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -62,12 +42,10 @@
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.compendium</artifactId>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
