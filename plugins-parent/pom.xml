@@ -47,6 +47,7 @@
         <versions-maven-plugin-version>2.1</versions-maven-plugin-version>
         <spring-boot-version>1.2.3.RELEASE</spring-boot-version>
         <maven-war-plugin-version>2.6</maven-war-plugin-version>
+        <xml-maven-plugin-version>1.0</xml-maven-plugin-version>
 
         <!-- Plugin dependancy versions -->
         <jaxb-version>2.1.13</jaxb-version>
@@ -163,6 +164,12 @@
                     <groupId>org.rhq.maven.plugins</groupId>
                     <artifactId>rhq-agent-plugin-plugin</artifactId>
                     <version>${rhq-agent-plugin-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <!-- http://mojo.codehaus.org/xml-maven-plugin -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>xml-maven-plugin</artifactId>
+                    <version>${xml-maven-plugin-version}</version>
                 </plugin>
                 <plugin>
                     <!-- https://www.eclipse.org/m2e/documentation/m2e-execution-not-covered.html -->

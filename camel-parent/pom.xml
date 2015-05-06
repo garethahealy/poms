@@ -84,6 +84,27 @@
                     <useBlueprint>true</useBlueprint>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <validationSets>
+                        <validationSet>
+                            <!-- Check the blueprints.xml is valid -->
+                            <dir>src/main/resources/OSGI-INF/blueprint</dir>
+                            <systemId>https://osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd</systemId>
+                        </validationSet>
+                    </validationSets>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
