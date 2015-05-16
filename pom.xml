@@ -12,13 +12,20 @@
     <groupId>com.garethahealy</groupId>
     <artifactId>projects-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <name>${project.artifactId}</name>
+    <description>https://github.com/garethahealy</description>
 
     <organization>
         <name>Gareth Healy</name>
         <url>https://github.com/garethahealy</url>
     </organization>
+
+    <developers>
+        <developer>
+            <id>garethahealy</id>
+        </developer>
+    </developers>
 
     <scm>
         <connection>scm:git:https://github.com/garethahealy/poms/tree/master</connection>
