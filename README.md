@@ -20,6 +20,7 @@ How to build projects
 How to deploy
 ========================
 - mvn versions:set -DnewVersion=X.Y.Z
+- mvn versions:commit
 - mvn deploy -Prelease-ossrh
 
 

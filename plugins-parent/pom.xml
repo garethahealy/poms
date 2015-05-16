@@ -14,7 +14,8 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <building-tools-verson>1.0.5</building-tools-verson>
+        <building-tools-verson>1.0.6</building-tools-verson>
+
         <!-- Plugin versions -->
         <maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
         <maven-source-plugin-version>2.1.1</maven-source-plugin-version>
