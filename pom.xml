@@ -12,7 +12,7 @@
     <groupId>com.garethahealy</groupId>
     <artifactId>projects-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.6</version>
+    <version>1.0.7-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <description>https://github.com/garethahealy</description>
 
@@ -191,6 +191,17 @@
             <id>fusesource.jboss.com</id>
             <name>Fuse Jboss Repository</name>
             <url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>fusesource-releases.jboss.com</id>
+            <name>Fuse Jboss Repository Realses</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/fs-releases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
