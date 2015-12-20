@@ -11,6 +11,6 @@
     </parent>
     <artifactId>building-tools</artifactId>
     <packaging>jar</packaging>
-    <name>${project.artifactId}</name>
+    <name>POMs :: Building Tools</name>
 
 </project>

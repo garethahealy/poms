@@ -11,7 +11,7 @@
     </parent>
     <artifactId>brms-parent</artifactId>
     <packaging>pom</packaging>
-    <name>${project.artifactId}</name>
+    <name>POMs :: JBoss BRMS Parent</name>
 
     <properties>
         <!-- JBoss BRMS versions -->

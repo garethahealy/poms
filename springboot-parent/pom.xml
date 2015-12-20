@@ -11,7 +11,7 @@
     </parent>
     <artifactId>springboot-parent</artifactId>
     <packaging>pom</packaging>
-    <name>${project.artifactId}</name>
+    <name>POMs :: Spring Boot Parent</name>
 
     <build>
         <pluginManagement>
