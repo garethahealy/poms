@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.garethahealy</groupId>
         <artifactId>projects-pom</artifactId>
-        <version>1.0.7-SNAPSHOT</version>
+        <version>1.0.7</version>
         <relativePath>../</relativePath>
     </parent>
     <artifactId>plugins-parent</artifactId>
@@ -14,7 +14,7 @@
     <name>POMs :: Plugins Parent</name>
 
     <properties>
-        <building-tools-verson>1.0.7-SNAPSHOT</building-tools-verson>
+        <building-tools-verson>1.0.7</building-tools-verson>
 
         <!-- Plugin versions -->
         <maven-bundle-plugin-version>2.3.7</maven-bundle-plugin-version>

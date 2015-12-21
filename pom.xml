@@ -12,7 +12,7 @@
     <groupId>com.garethahealy</groupId>
     <artifactId>projects-pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.7</version>
     <name>POMs :: Project</name>
     <description>https://github.com/garethahealy</description>
 
@@ -184,7 +184,7 @@
         <repository>
             <id>repository.redhat.com</id>
             <name>RedHat TechPreview Repository</name>
-            <url>http://maven.repository.redhat.com/techpreview/all/</url>
+            <url>https://maven.repository.redhat.com/techpreview/all/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -219,7 +219,7 @@
         <pluginRepository>
             <id>repository.redhat.com</id>
             <name>RedHat TechPreview Repository</name>
-            <url>http://maven.repository.redhat.com/techpreview/all/</url>
+            <url>https://maven.repository.redhat.com/techpreview/all/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
