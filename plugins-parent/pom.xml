@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.garethahealy</groupId>
         <artifactId>projects-pom</artifactId>
-        <version>1.0.7</version>
+        <version>1.0.8</version>
         <relativePath>../</relativePath>
     </parent>
     <artifactId>plugins-parent</artifactId>
@@ -14,7 +14,7 @@
     <name>POMs :: Plugins Parent</name>
 
     <properties>
-        <building-tools-verson>1.0.7</building-tools-verson>
+        <building-tools-verson>1.0.8</building-tools-verson>
 
         <!-- Plugin versions -->
         <maven-bundle-plugin-version>2.3.7</maven-bundle-plugin-version>
@@ -330,6 +330,7 @@
                         <id>update-file-header</id>
                         <goals>
                             <goal>update-file-header</goal>
+                            <goal>download-licenses</goal>
                         </goals>
                         <phase>process-sources</phase>
                     </execution>
