@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.garethahealy</groupId>
-        <artifactId>plugins-parent</artifactId>
-        <version>1.0.8</version>
-        <relativePath>../plugins-parent</relativePath>
+        <artifactId>projects-pom</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
     </parent>
-    <artifactId>commons-parent</artifactId>
+    <artifactId>commons-bom</artifactId>
     <packaging>pom</packaging>
-    <name>POMs :: Commons Parent</name>
+    <name>POMs :: Commons Bill Of Materials (BOM)</name>
 
     <properties>
         <!-- Logging for local apps -->
@@ -52,7 +52,6 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api-verison}</version>
-                <scope>compile</scope>
             </dependency>
 
             <!-- JavaEE -->
@@ -60,13 +59,11 @@
                 <groupId>javax.enterprise</groupId>
                 <artifactId>cdi-api</artifactId>
                 <version>${cdi-api-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss.spec.javax.ejb</groupId>
                 <artifactId>jboss-ejb-api_3.1_spec</artifactId>
                 <version>${ejb-api-spec}</version>
-                <scope>provided</scope>
             </dependency>
 
             <!-- Database -->
@@ -74,25 +71,21 @@
                 <groupId>org.apache.openjpa</groupId>
                 <artifactId>openjpa</artifactId>
                 <version>${openjpa-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
                 <version>${hibernate-core-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.geronimo.specs</groupId>
                 <artifactId>geronimo-jpa_2.0_spec</artifactId>
                 <version>${geronimo-jpa-version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <!-- Commons -->
@@ -100,19 +93,16 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-dbcp2</artifactId>
                 <version>${commons-dbcp2-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io-version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <!-- Other -->
@@ -120,19 +110,16 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${joda-time-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.lmax</groupId>
                 <artifactId>disruptor</artifactId>
                 <version>${disruptor-version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.rhq</groupId>
                 <artifactId>rhq-jmx-plugin</artifactId>
                 <version>${rhq-version}</version>
-                <scope>provided</scope>
             </dependency>
 
             <!-- Testing -->
@@ -156,9 +143,9 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <!-- Commons
     <dependencies>
-        <!-- Commons -->
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -172,7 +159,7 @@
             <artifactId>joda-time</artifactId>
         </dependency>
 
-        <!-- Testing -->
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -189,5 +176,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    -->
 
 </project>

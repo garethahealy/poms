@@ -5,15 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.garethahealy</groupId>
-        <artifactId>osgi-plugins-parent</artifactId>
-        <version>1.0.8</version>
-        <relativePath>../osgi-plugins-parent</relativePath>
+        <artifactId>plugins-parent</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+        <relativePath>../plugins-parent</relativePath>
     </parent>
     <artifactId>brms-parent</artifactId>
     <packaging>pom</packaging>
     <name>POMs :: JBoss BRMS Parent</name>
 
     <properties>
+        <commons-bom-version>1.1.0-SNAPSHOT</commons-bom-version>
+
         <!-- JBoss BRMS versions -->
         <jbpm-version>6.0.3-redhat-6</jbpm-version>
         <drools-version>6.0.3-redhat-6</drools-version>
@@ -58,6 +60,14 @@
     <!-- Components -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.garethahealy</groupId>
+                <artifactId>commons-bom</artifactId>
+                <version>${commons-bom-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- TODO
             <dependency>
                 <groupId>org.jboss.bom.brms</groupId>

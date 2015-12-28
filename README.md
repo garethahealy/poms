@@ -1,4 +1,4 @@
-![Image of Travis-CI](https://travis-ci.org/garethahealy/poms.svg?branch=master)
+[![Build Status](https://travis-ci.org/garethahealy/poms.svg?branch=master)](https://travis-ci.org/garethahealy/poms)
 
 # POMs
 Collection of POMs which are used by all projects i am working on. Strucutre is as follows:
@@ -6,12 +6,12 @@ Collection of POMs which are used by all projects i am working on. Strucutre is 
 - projects-pom
     - plugins-parent
     - commons-parent
-    - osgi-plugins-parent
-        - osgi-parent
-            - camel-parent
         - brms-parent
         - eap-parent
         - springboot-parent
+    - osgi-plugins-parent
+        - osgi-parent
+            - camel-parent
 
 # How to build projects
 - mvn clean install -DskipTests
