@@ -143,9 +143,9 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <!-- Commons
-    <dependencies>
 
+    <!-- Standard list of common things all projects use
+    <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -158,7 +158,6 @@
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>junit</groupId>

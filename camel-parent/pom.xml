@@ -14,6 +14,23 @@
     <name>POMs :: Fuse/Camel Parent</name>
 
     <properties>
+        <commons-bom-version>1.1.0-SNAPSHOT</commons-bom-version>
+        <!-- START commons-bom properties -->
+        <!-- Below is here for features.xml property resolvers -->
+        <!-- Database -->
+        <openjpa-version>2.4.0</openjpa-version>
+        <hibernate-core-version>5.0.5.Final</hibernate-core-version>
+        <mysql-connector-version>5.1.38</mysql-connector-version>
+        <geronimo-jpa-version>1.1</geronimo-jpa-version>
+        <!-- Commons -->
+        <commons-dbcp2-version>2.1.1</commons-dbcp2-version>
+        <commons-pool2-version>2.4.2</commons-pool2-version>
+        <commons-lang3-version>3.4</commons-lang3-version>
+        <commons-io-version>2.4</commons-io-version>
+        <!-- Other -->
+        <joda-time-version>2.9.1</joda-time-version>
+        <!-- END commons-bom properties -->
+
         <!-- BOM -->
         <jboss-fuse-bom-version>${fuse-version}</jboss-fuse-bom-version>
         <!-- Properties from BOM -->
@@ -115,7 +132,7 @@
             <dependency>
                 <groupId>com.garethahealy</groupId>
                 <artifactId>commons-bom</artifactId>
-                <version>${project.version}</version>
+                <version>${commons-bom-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

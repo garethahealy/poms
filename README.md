@@ -19,8 +19,15 @@ Collection of POMs which are used by all projects i am working on. Strucutre is 
 - mvn sonar:sonar
 
 # How to deploy
+## Update version
 - mvn versions:set -DnewVersion=X.Y.Z
 - mvn versions:commit
+
+## Deploy to maven central
 - mvn deploy -Prelease-ossrh
+
+## Deploy to local
+- mvn deploy -DaltDeploymentRepository=local-nexus-releases::default::http://localhost:8081/nexus/content/repositories/releases
+- mvn deploy -DaltDeploymentRepository=local-nexus-snapshots::default::http://localhost:8081/nexus/content/repositories/snapshots
 
 
