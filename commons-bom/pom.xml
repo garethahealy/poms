@@ -32,6 +32,7 @@
         <commons-pool2-version>2.4.2</commons-pool2-version>
         <commons-lang3-version>3.4</commons-lang3-version>
         <commons-io-version>2.4</commons-io-version>
+        <commons-collections4-version>4.1</commons-collections4-version>
 
         <!-- Other -->
         <joda-time-version>2.9.1</joda-time-version>
@@ -103,6 +104,11 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4-version}</version>
             </dependency>
 
             <!-- Other -->
