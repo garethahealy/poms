@@ -4,11 +4,12 @@
 Collection of POMs which are used by all projects i am working on. Strucutre is as follows:
 
 - projects-pom
+    - commons-bom
+    - building-tools
     - plugins-parent
-    - commons-parent
-        - brms-parent
-        - eap-parent
-        - springboot-parent
+      - brms-parent
+      - eap-parent
+      - springboot-parent
     - osgi-plugins-parent
         - osgi-parent
             - camel-parent
