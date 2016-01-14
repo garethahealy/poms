@@ -14,8 +14,8 @@
     <name>POMs :: Plugins Parent</name>
 
     <properties>
-        <commons-bom-version>1.1.0</commons-bom-version>
-        <building-tools-verson>1.1.0</building-tools-verson>
+        <commons-bom-version>1.1.1</commons-bom-version>
+        <building-tools-verson>1.1.1</building-tools-verson>
 
         <!-- Plugin versions -->
         <maven-bundle-plugin-version>2.3.7</maven-bundle-plugin-version>
