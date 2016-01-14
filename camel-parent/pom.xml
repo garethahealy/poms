@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.garethahealy</groupId>
         <artifactId>osgi-parent</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
+        <version>1.1.1</version>
         <relativePath>../osgi-parent</relativePath>
     </parent>
     <artifactId>camel-parent</artifactId>
@@ -14,7 +14,6 @@
     <name>POMs :: Fuse/Camel Parent</name>
 
     <properties>
-        <commons-bom-version>1.1.0</commons-bom-version>
         <!-- START commons-bom properties -->
         <!-- Below is here for features.xml property resolvers -->
         <!-- Database -->
@@ -40,6 +39,7 @@
         <cxf-version>3.0.4.redhat-621084</cxf-version>
         <activemq-version>5.11.0.redhat-621084</activemq-version>
         <karaf-version>2.4.0.redhat-621084</karaf-version>
+        <karaf-number-version>2.4.0</karaf-number-version>
         <fabric8-version>1.2.0.redhat-621084</fabric8-version>
 
         <!-- Not sure if below is still needed from ###here-->

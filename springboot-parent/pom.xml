@@ -6,16 +6,12 @@
     <parent>
         <groupId>com.garethahealy</groupId>
         <artifactId>plugins-parent</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
+        <version>1.1.1</version>
         <relativePath>../plugins-parent</relativePath>
     </parent>
     <artifactId>springboot-parent</artifactId>
     <packaging>pom</packaging>
     <name>POMs :: Spring Boot Parent</name>
-
-    <properties>
-        <commons-bom-version>1.1.0</commons-bom-version>
-    </properties>
 
     <build>
         <pluginManagement>
