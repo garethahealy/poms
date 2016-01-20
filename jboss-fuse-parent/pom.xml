@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.garethahealy.poms</groupId>
         <artifactId>osgi-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath>../osgi-parent</relativePath>
     </parent>
-    <artifactId>camel-parent</artifactId>
+    <artifactId>jboss-fuse-parent</artifactId>
     <packaging>pom</packaging>
-    <name>POMs :: Fuse/Camel Parent</name>
+    <name>POMs :: JBoss Fuse Parent</name>
 
     <properties>
         <!-- START commons-bom properties -->
@@ -131,7 +131,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.garethahealy</groupId>
+                <groupId>com.garethahealy.poms</groupId>
                 <artifactId>commons-bom</artifactId>
                 <version>${commons-bom-version}</version>
                 <type>pom</type>
@@ -184,14 +184,17 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
