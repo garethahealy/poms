@@ -7,12 +7,14 @@ Collection of POMs which are used by all projects i am working on. Strucutre is 
     - commons-bom
     - building-tools
     - plugins-parent
-      - brms-parent
-      - eap-parent
+      - jboss-brms-parent
+      - jboss-eap-parent
       - springboot-parent
+      - camel-parent
     - osgi-plugins-parent
         - osgi-parent
-            - camel-parent
+            - jboss-fuse-parent
+            - karaf-parent
 
 # How to build projects
 - mvn clean install -DskipTests

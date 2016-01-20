@@ -5,17 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.garethahealy.poms</groupId>
-        <artifactId>plugins-parent</artifactId>
+        <artifactId>osgi-parent</artifactId>
         <version>1.0.0</version>
-        <relativePath>../plugins-parent</relativePath>
+        <relativePath>../osgi-parent</relativePath>
     </parent>
-    <artifactId>camel-parent</artifactId>
+    <artifactId>karaf-parent</artifactId>
     <packaging>pom</packaging>
-    <name>POMs :: Apache Camel Parent</name>
+    <name>POMs :: Apache Karaf Parent</name>
 
     <properties>
-        <camel-version>2.16.0</camel-version>
-
         <!-- Logging for local apps -->
         <slf4j-api-verison>1.7.13</slf4j-api-verison>
 
@@ -45,13 +43,6 @@
                 <version>${commons-bom-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.camel</groupId>
-                <artifactId>camel-parent</artifactId>
-                <version>${camel-version}</version>
-                <scope>import</scope>
-                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>

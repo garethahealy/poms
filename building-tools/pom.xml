@@ -4,9 +4,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.garethahealy</groupId>
-        <artifactId>projects-pom</artifactId>
-        <version>1.1.1</version>
+        <groupId>com.garethahealy.poms</groupId>
+        <artifactId>poms-parent</artifactId>
+        <version>1.0.0</version>
         <relativePath>../</relativePath>
     </parent>
     <artifactId>building-tools</artifactId>

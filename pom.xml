@@ -9,11 +9,11 @@
         <version>9</version>
         <relativePath/>
     </parent>
-    <groupId>com.garethahealy</groupId>
-    <artifactId>projects-pom</artifactId>
+    <groupId>com.garethahealy.poms</groupId>
+    <artifactId>poms-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.1</version>
-    <name>POMs :: Project</name>
+    <version>1.0.0</version>
+    <name>POMs</name>
     <description>https://github.com/garethahealy</description>
 
     <organization>
@@ -51,10 +51,12 @@
         <module>plugins-parent</module>
         <module>osgi-plugins-parent</module>
         <module>osgi-parent</module>
-        <module>camel-parent</module>
-        <module>eap-parent</module>
-        <module>brms-parent</module>
+        <module>jboss-fuse-parent</module>
+        <module>jboss-eap-parent</module>
+        <module>jboss-brms-parent</module>
         <module>springboot-parent</module>
+        <module>karaf-parent</module>
+        <module>camel-parent</module>
     </modules>
 
     <properties>
