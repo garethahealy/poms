@@ -11,6 +11,7 @@ Collection of POMs which are used by all projects i am working on. Strucutre is 
       - jboss-eap-parent
       - springboot-parent
       - camel-parent
+      - jboss-fuse-on-openshift-parent
     - osgi-plugins-parent
         - osgi-parent
             - jboss-fuse-parent
