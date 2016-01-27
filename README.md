@@ -28,7 +28,7 @@ Collection of POMs which are used by all projects i am working on. Strucutre is 
 - mvn versions:commit
 
 ## Deploy to maven central
-- mvn deploy -Prelease-ossrh
+- mvn clean install deploy -Prelease-ossrh
 
 ## Deploy to local
 - mvn deploy -DaltDeploymentRepository=local-nexus-releases::default::http://localhost:8081/nexus/content/repositories/releases
