@@ -15,22 +15,22 @@
 
     <properties>
         <!-- Logging for local apps -->
-        <slf4j-api-verison>1.7.13</slf4j-api-verison>
+        <slf4j-api-verison>1.7.21</slf4j-api-verison>
 
         <!-- Commons -->
         <commons-dbcp2-version>2.1.1</commons-dbcp2-version>
         <commons-pool2-version>2.4.2</commons-pool2-version>
         <commons-lang3-version>3.4</commons-lang3-version>
-        <commons-io-version>2.4</commons-io-version>
+        <commons-io-version>2.5</commons-io-version>
         <commons-collections4-version>4.1</commons-collections4-version>
 
         <!-- Other -->
-        <joda-time-version>2.9.1</joda-time-version>
-        <disruptor-version>3.3.0</disruptor-version>
+        <joda-time-version>2.9.4</joda-time-version>
+        <disruptor-version>3.3.5</disruptor-version>
 
         <!-- Testing -->
         <junit-version>4.12</junit-version>
-        <slf4j-version>1.7.13</slf4j-version>
+        <slf4j-version>1.7.21</slf4j-version>
         <mockito-core-version>1.10.19</mockito-core-version>
     </properties>
 
