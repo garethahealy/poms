@@ -21,12 +21,5 @@ target/
 tmp/
 *.tmp
 
-# AMQ Performance Testing #
-JmsConsumer_*.xml
-JmsProducer_*.xml
-
-# Testing #
-.ekstazi/
-
-# VersionEye API #
-versioneye.properties
+# Travis CI #
+codesigning.asc
