@@ -6,8 +6,8 @@ env:
   - secure: KTk9JUIs5y9CDjMwaw5vtI78khRWv/FJ5sS04kJ70F1v6fPrFh6KdS7Yn/X9QzQyQjx/XZRnr69cndVwyLXUWqivj+s0MFzdgQpl9IKm9Zw4k3IR/LtNCdhB9Nv/4Fg+JIyqoYVrIMaSiAodr9ika3lBIqL3BBo5oFWiSnPB0IM=
 before_install:
 - openssl aes-256-cbc -K $encrypted_51bfd52bf8f1_key -iv $encrypted_51bfd52bf8f1_iv
-  -in codesigning.asc.enc -out codesigning.asc -d
-- gpg --fast-import codesigning.asc
+  -in sonatype-deploy/codesigning.asc.enc -out sonatype-deploy/codesigning.asc -d
+- gpg --fast-import sonatype-deploy/codesigning.asc
 language: java
 install: mvn clean install
 jdk:
@@ -16,4 +16,4 @@ cache:
   directories:
   - $HOME/.m2
 after_success:
-- mvn deploy -Prelease-ossrh --settings deploy-settings.xml
+- mvn deploy -Prelease-ossrh --settings sonatype-deploy/deploy-settings.xml
