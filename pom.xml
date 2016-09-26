@@ -75,10 +75,10 @@
         <license.addJavaLicenseAfterPackage>false</license.addJavaLicenseAfterPackage>
         <license.canUpdateDescription>true</license.canUpdateDescription>
 
-        <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
+        <maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
         <maven-gpg-plugin-version>1.6</maven-gpg-plugin-version>
-        <nexus-staging-maven-plugin-version>1.6.6</nexus-staging-maven-plugin-version>
-        <versions-maven-plugin-version>2.2</versions-maven-plugin-version>
+        <nexus-staging-maven-plugin-version>1.6.7</nexus-staging-maven-plugin-version>
+        <versions-maven-plugin-version>2.3</versions-maven-plugin-version>
     </properties>
 
     <!-- Build plugins -->

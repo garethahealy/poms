@@ -15,33 +15,33 @@
 
     <properties>
         <!-- Logging for local apps -->
-        <slf4j-api-verison>1.7.13</slf4j-api-verison>
+        <slf4j-api-verison>1.7.21</slf4j-api-verison>
 
         <!-- JavaEE -->
         <cdi-api-version>1.2</cdi-api-version>
         <ejb-api-spec>1.0.2.Final</ejb-api-spec>
 
         <!-- Database -->
-        <openjpa-version>2.4.0</openjpa-version>
-        <hibernate-core-version>5.0.5.Final</hibernate-core-version>
-        <mysql-connector-version>5.1.38</mysql-connector-version>
+        <openjpa-version>2.4.1</openjpa-version>
+        <hibernate-core-version>5.2.2.Final</hibernate-core-version>
+        <mysql-connector-version>5.1.39</mysql-connector-version>
         <geronimo-jpa-version>1.1</geronimo-jpa-version>
 
         <!-- Commons -->
         <commons-dbcp2-version>2.1.1</commons-dbcp2-version>
         <commons-pool2-version>2.4.2</commons-pool2-version>
         <commons-lang3-version>3.4</commons-lang3-version>
-        <commons-io-version>2.4</commons-io-version>
+        <commons-io-version>2.5</commons-io-version>
         <commons-collections4-version>4.1</commons-collections4-version>
 
         <!-- Other -->
-        <joda-time-version>2.9.1</joda-time-version>
-        <disruptor-version>3.3.0</disruptor-version>
+        <joda-time-version>2.9.4</joda-time-version>
+        <disruptor-version>3.3.5</disruptor-version>
         <rhq-version>4.13.0</rhq-version>
 
         <!-- Testing -->
         <junit-version>4.12</junit-version>
-        <slf4j-version>1.7.13</slf4j-version>
+        <slf4j-version>1.7.21</slf4j-version>
         <mockito-core-version>1.10.19</mockito-core-version>
     </properties>
 

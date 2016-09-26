@@ -21,10 +21,10 @@
         <camel-version>2.15.1.redhat-621084</camel-version>
         <cxf-version>3.0.4.redhat-621084</cxf-version>
         <activemq-version>5.11.0.redhat-621084</activemq-version>
-        <fabric8-version>2.2.100</fabric8-version>
-        <docker-maven-plugin-version>0.14.2</docker-maven-plugin-version>
+        <fabric8-version>2.2.161</fabric8-version>
+        <docker-maven-plugin-version>0.16.4</docker-maven-plugin-version>
 
-        <log4j2-version>2.5</log4j2-version>
+        <log4j2-version>2.6.2</log4j2-version>
     </properties>
 
     <build>
