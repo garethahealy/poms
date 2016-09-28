@@ -47,10 +47,12 @@
         <docker-maven-plugin-version>0.16.3</docker-maven-plugin-version>
         <felix-scr-plugin.version>1.22.0</felix-scr-plugin.version>
         <openjpa-maven-plugin-version>2.4.1</openjpa-maven-plugin-version>
+        <maven-enforcer-plugin-version>1.4.1</maven-enforcer-plugin-version>
 
         <!-- Plugin dependancy versions -->
         <jaxb-version>2.1.13</jaxb-version>
         <jaxb-api-version>2.1</jaxb-api-version>
+        <enforce-victims-rule>1.3.4</enforce-victims-rule>
     </properties>
 
     <!-- Build plugins -->
@@ -175,6 +177,11 @@
                     <groupId>io.fabric8</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin-version}</version>
                 </plugin>
                 <plugin>
                     <!-- https://www.eclipse.org/m2e/documentation/m2e-execution-not-covered.html -->
@@ -335,6 +342,82 @@
                             <goal>download-licenses</goal>
                         </goals>
                         <phase>process-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.redhat.victims</groupId>
+                        <artifactId>enforce-victims-rule</artifactId>
+                        <version>${enforce-victims-rule}</version>
+                        <type>jar</type>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
+                                    <message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-victims-rule</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule implementation="com.redhat.victims.VictimsRule">
+                                    <!--
+                                      Check the project's dependencies against the database using
+                                      name and version. The default mode for this is 'warning'.
+
+                                      Valid options are:
+
+                                      disabled: Rule is still run but only INFO level messages aand no errors.
+                                      warning : Rule will spit out a warning message but doesn't result in a failure.
+                                      fatal   : Rule will spit out an error message and fail the build.
+                                    -->
+                                    <metadata>fatal</metadata>
+
+                                    <!--
+                                      Check the project's dependencies against the database using
+                                      the SHA-512 checksum of the artifact. The default is fatal.
+
+                                      Valid options are:
+
+                                      disabled: Rule is still run but only INFO level messages aand no errors.
+                                      warning : Rule will spit out a warning message but doesn't result in a failure.
+                                      fatal   : Rule will spit out an error message and fail the build.
+                                    -->
+                                    <fingerprint>fatal</fingerprint>
+
+                                    <!--
+                                      Disables the synchronization mechansim. By default the rule will
+                                      attempt to update the database for each build.
+
+                                      Valid options are:
+
+                                      auto  : Automatically update the database entries on each build.
+                                      daily : Update the database entries once per day.
+                                      weekly: Update the database entries once per week.
+                                      offline   : Disable the synchronization mechanism.
+                                    -->
+                                    <updates>auto</updates>
+                                </rule>
+                            </rules>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
