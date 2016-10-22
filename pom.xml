@@ -74,6 +74,7 @@
         <license.inceptionYear>2013</license.inceptionYear>
         <license.addJavaLicenseAfterPackage>false</license.addJavaLicenseAfterPackage>
         <license.canUpdateDescription>true</license.canUpdateDescription>
+        <license.canUpdateCopyright>true</license.canUpdateCopyright>
 
         <maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
         <maven-gpg-plugin-version>1.6</maven-gpg-plugin-version>

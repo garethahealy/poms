@@ -14,8 +14,8 @@
     <name>POMs :: Plugins Parent</name>
 
     <properties>
-        <commons-bom-version>1.0.1</commons-bom-version>
-        <building-tools-verson>1.0.1</building-tools-verson>
+        <commons-bom-version>1.0.2-SNAPSHOT</commons-bom-version>
+        <building-tools-verson>1.0.2-SNAPSHOT</building-tools-verson>
 
         <!-- Plugin versions -->
         <maven-bundle-plugin-version>2.3.7</maven-bundle-plugin-version>
@@ -348,6 +348,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${maven-enforcer-plugin-version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.redhat.victims</groupId>
