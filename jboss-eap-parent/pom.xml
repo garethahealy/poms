@@ -14,10 +14,10 @@
     <name>POMs :: JBoss EAP Parent</name>
 
     <properties>
-        <eap-version>6.2.0-redhat-1</eap-version>
+        <eap-version>6.4.9.GA</eap-version>
 
-        <spring-webmvc-version>4.1.6.RELEASE</spring-webmvc-version>
-        <tomcat-version>8.0.20</tomcat-version>
+        <spring-webmvc-version>4.3.3.RELEASE</spring-webmvc-version>
+        <tomcat-version>8.5.6</tomcat-version>
         <jstl-version>1.2</jstl-version>
     </properties>
 
