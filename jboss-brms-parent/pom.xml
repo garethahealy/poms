@@ -15,9 +15,9 @@
 
     <properties>
         <!-- JBoss BRMS versions -->
-        <jbpm-version>6.0.3-redhat-6</jbpm-version>
-        <drools-version>6.0.3-redhat-6</drools-version>
-        <kie-maven-plugin-version>6.2.0.Final</kie-maven-plugin-version>
+        <jbpm-version>6.4.0.Final</jbpm-version>
+        <drools-version>6.4.0.Final</drools-version>
+        <kie-maven-plugin-version>6.4.0.Final</kie-maven-plugin-version>
     </properties>
 
     <build>
@@ -65,16 +65,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <!-- TODO
-            <dependency>
-                <groupId>org.jboss.bom.brms</groupId>
-                <artifactId>jboss-javaee-6.0-with-brms-bpmsuite</artifactId>
-                <version>${drools-version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            -->
 
             <!-- BRMS -->
             <dependency>
