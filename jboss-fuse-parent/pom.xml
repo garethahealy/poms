@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.garethahealy.poms</groupId>
         <artifactId>osgi-parent</artifactId>
-        <version>1.0.3-SNAPSHOT</version>
+        <version>1.0.3</version>
         <relativePath>../osgi-parent</relativePath>
     </parent>
     <artifactId>jboss-fuse-parent</artifactId>
