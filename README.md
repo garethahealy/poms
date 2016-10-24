@@ -36,6 +36,5 @@ Collection of POMs which are used by all projects i am working on. Strucutre is 
 - mvn deploy -DaltDeploymentRepository=local-nexus-releases::default::http://localhost:8081/nexus/content/repositories/releases
 - mvn deploy -DaltDeploymentRepository=local-nexus-snapshots::default::http://localhost:8081/nexus/content/repositories/snapshots
 
-
 ## Travis CI
 - http://www.debonair.io/post/maven-cd/
