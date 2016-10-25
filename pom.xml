@@ -58,6 +58,7 @@
         <module>springboot-parent</module>
         <module>karaf-parent</module>
         <module>camel-parent</module>
+        <module>camel-on-springboot-parent</module>
     </modules>
 
     <properties>
@@ -66,7 +67,6 @@
         <!-- Project settings -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java-runtime>1.7</java-runtime>
         <java.version>1.7</java.version>
 
         <!-- license -->
@@ -213,6 +213,28 @@
             <id>fusesource-releases.jboss.com</id>
             <name>Fuse Jboss Repository Realses</name>
             <url>https://repository.jboss.org/nexus/content/repositories/fs-releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>snapshots.sonatype.org</id>
+            <name>Sonatype Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>releases.sonatype.org</id>
+            <name>Sonatype Releases</name>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
