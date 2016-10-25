@@ -14,7 +14,7 @@ install:
   - openssl aes-256-cbc -K $encrypted_51bfd52bf8f1_key -iv $encrypted_51bfd52bf8f1_iv -in sonatype-deploy/codesigning.asc.enc -out sonatype-deploy/codesigning.asc -d
   - gpg --fast-import sonatype-deploy/codesigning.asc
 before_script:
-  - mvn dependency:resolve
+  - mvn dependency:resolve-plugins dependency:resolve
 script:
   - mvn clean install
 after_success:
