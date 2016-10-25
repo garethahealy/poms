@@ -37,7 +37,7 @@
         <rhq-agent-plugin-plugin-version>1.0</rhq-agent-plugin-plugin-version>
         <maven-dependency-plugin>2.10</maven-dependency-plugin>
         <maven-jar-plugin-version>3.0.2</maven-jar-plugin-version>
-        <sonar-maven-plugin-version>3.0.2</sonar-maven-plugin-version>
+        <sonar-maven-plugin-version>3.2</sonar-maven-plugin-version>
         <cobertura-maven-plugin-version>2.7</cobertura-maven-plugin-version>
         <maven-shade-plugin-version>2.4.3</maven-shade-plugin-version>
         <spring-boot-version>1.4.1.RELEASE</spring-boot-version>
@@ -133,7 +133,7 @@
                 </plugin>
                 <plugin>
                     <!-- http://mojo.codehaus.org/sonar-maven-plugin -->
-                    <groupId>org.codehaus.mojo</groupId>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
                     <version>${sonar-maven-plugin-version}</version>
                 </plugin>
@@ -305,7 +305,7 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
+                <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
             </plugin>
             <plugin>
