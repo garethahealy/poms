@@ -14,7 +14,7 @@
     <name>POMs :: Apache Camel Parent</name>
 
     <properties>
-        <camel-version>2.17.3</camel-version>
+        <camel-version>2.18.0</camel-version>
         <cxf-version>3.1.7</cxf-version>
 
         <log4j2-version>2.6.2</log4j2-version>
