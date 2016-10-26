@@ -236,7 +236,7 @@
                     <execution>
                         <id>attach-sources</id>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -308,27 +308,6 @@
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <configuration>
-                    <check>
-                        <haltOnFailure>false</haltOnFailure>
-                        <lineRate>70</lineRate>
-                        <totalLineRate>70</totalLineRate>
-                        <branchRate>70</branchRate>
-                        <totalBranchRate>70</totalBranchRate>
-                    </check>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>clean</goal>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
             <!-- Governance plugins -->
             <plugin>
@@ -359,62 +338,18 @@
                 </dependencies>
                 <executions>
                     <execution>
-                        <id>enforce-maven</id>
+                        <id>enforce-rules</id>
                         <goals>
                             <goal>enforce</goal>
                         </goals>
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>(,2.1.0),(2.1.0,2.2.0),(2.2.0,)</version>
-                                    <message>Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.</message>
+                                    <version>3.0</version>
                                 </requireMavenVersion>
-                            </rules>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>enforce-victims-rule</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
                                 <rule implementation="com.redhat.victims.VictimsRule">
-                                    <!--
-                                      Check the project's dependencies against the database using
-                                      name and version. The default mode for this is 'warning'.
-
-                                      Valid options are:
-
-                                      disabled: Rule is still run but only INFO level messages aand no errors.
-                                      warning : Rule will spit out a warning message but doesn't result in a failure.
-                                      fatal   : Rule will spit out an error message and fail the build.
-                                    -->
                                     <metadata>fatal</metadata>
-
-                                    <!--
-                                      Check the project's dependencies against the database using
-                                      the SHA-512 checksum of the artifact. The default is fatal.
-
-                                      Valid options are:
-
-                                      disabled: Rule is still run but only INFO level messages aand no errors.
-                                      warning : Rule will spit out a warning message but doesn't result in a failure.
-                                      fatal   : Rule will spit out an error message and fail the build.
-                                    -->
                                     <fingerprint>fatal</fingerprint>
-
-                                    <!--
-                                      Disables the synchronization mechansim. By default the rule will
-                                      attempt to update the database for each build.
-
-                                      Valid options are:
-
-                                      auto  : Automatically update the database entries on each build.
-                                      daily : Update the database entries once per day.
-                                      weekly: Update the database entries once per week.
-                                      offline   : Disable the synchronization mechanism.
-                                    -->
                                     <updates>daily</updates>
                                 </rule>
                             </rules>
@@ -422,21 +357,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <configuration>
-                    <formats>
-                        <format>html</format>
-                        <format>xml</format>
-                    </formats>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>
