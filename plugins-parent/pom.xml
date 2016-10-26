@@ -415,7 +415,7 @@
                                       weekly: Update the database entries once per week.
                                       offline   : Disable the synchronization mechanism.
                                     -->
-                                    <updates>auto</updates>
+                                    <updates>daily</updates>
                                 </rule>
                             </rules>
                         </configuration>
