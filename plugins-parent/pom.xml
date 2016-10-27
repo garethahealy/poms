@@ -213,6 +213,10 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <compilerArgs>
+                        <compilerArg>-Xlint:unchecked</compilerArg>
+                        <compilerArg>-Xlint:deprecation</compilerArg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
