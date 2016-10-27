@@ -10,17 +10,17 @@ language: java
 jdk:
   - oraclejdk8
 install:
-  - free -m
   - openssl aes-256-cbc -K $encrypted_51bfd52bf8f1_key -iv $encrypted_51bfd52bf8f1_iv -in sonatype-deploy/codesigning.asc.enc -out sonatype-deploy/codesigning.asc -d
   - gpg --fast-import sonatype-deploy/codesigning.asc
-  - export MAVEN_OPTS="-Xms2048m -Xmx2048m"
-  - java -version && javac -version && mvn -version
+  - bash .travis/update.sh
+  - export M2_HOME=/usr/share/maven3 && export PATH=${M2_HOME}/bin:${PATH} && export MAVEN_OPTS="-Xms2048m -Xmx2048m"
+  - java -version && javac -version && mvn -version -B
 before_script:
-  - mvn dependency:resolve-plugins dependency:resolve
+  - mvn dependency:resolve-plugins dependency:resolve -B
 script:
-  - mvn clean install
-after_success:
-  - mvn deploy -Prelease-ossrh --settings sonatype-deploy/deploy-settings.xml
+  - mvn clean install -B
+deploy:
+  - mvn deploy -B -Prelease-ossrh --settings sonatype-deploy/deploy-settings.xml
 cache:
   directories:
   - $HOME/.m2
