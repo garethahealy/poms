@@ -47,6 +47,13 @@
         <dbcp-range-version>"[2.1,2.2)"</dbcp-range-version>
         <javassist-range-version>"[3.18,4)"</javassist-range-version>
         <hibernate-range-version>"[5.0,5.1)"</hibernate-range-version>
+
+        <aries-jpa-blueprint-version>1.0.1</aries-jpa-blueprint-version>
+        <aries-transaction-blueprint-version>1.0.1</aries-transaction-blueprint-version>
+        <aries-whiteboard-version>1.0.0</aries-whiteboard-version>
+        <asm-all-version>4.0</asm-all-version>
+        <cglib-version>3.1_1</cglib-version>
+        <serp-version>1.14.1_1</serp-version>
     </properties>
 
     <build>
