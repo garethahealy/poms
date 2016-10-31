@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.garethahealy.poms</groupId>
         <artifactId>poms-parent</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
     <artifactId>plugins-parent</artifactId>
@@ -214,8 +214,10 @@
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <compilerArgs>
-                        <compilerArg>-Xlint:unchecked</compilerArg>
-                        <compilerArg>-Xlint:deprecation</compilerArg>
+                        <compilerArg>-Xlint:all</compilerArg>
+                        <compilerArg>-Xlint:-processing</compilerArg>
+                        <compilerArg>-Werror</compilerArg>
+                        <compilerArg>-Xdoclint:all</compilerArg>
                     </compilerArgs>
                 </configuration>
             </plugin>
