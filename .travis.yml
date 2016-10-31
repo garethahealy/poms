@@ -10,8 +10,8 @@ language: java
 jdk:
   - oraclejdk8
 install:
-  - openssl aes-256-cbc -K $encrypted_51bfd52bf8f1_key -iv $encrypted_51bfd52bf8f1_iv -in sonatype-deploy/codesigning.asc.enc -out sonatype-deploy/codesigning.asc -d
-  - gpg --fast-import sonatype-deploy/codesigning.asc
+  - openssl aes-256-cbc -K $encrypted_51bfd52bf8f1_key -iv $encrypted_51bfd52bf8f1_iv -in .travis/codesigning.asc.enc -out .travis/codesigning.asc -d
+  - gpg --fast-import .travis/codesigning.asc
   - bash .travis/update.sh
   - export M2_HOME=/usr/share/maven3 && export PATH=${M2_HOME}/bin:${PATH} && export MAVEN_OPTS="-Xms2048m -Xmx2048m"
   - java -version && javac -version && mvn -version -B
@@ -20,7 +20,10 @@ before_script:
 script:
   - mvn clean install -B
 deploy:
-  - mvn deploy -B -Prelease-ossrh --settings sonatype-deploy/deploy-settings.xml
+  - if [[ "${TRAVIS_BRANCH}" = "master" ]] && [[ "${TRAVIS_PULL_REQUEST}" = "false" ]];
+    then
+      mvn deploy -B -Prelease-ossrh --settings .travis/deploy-settings.xml
+    fi
 cache:
   directories:
   - $HOME/.m2
