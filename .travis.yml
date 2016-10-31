@@ -20,10 +20,8 @@ before_script:
 script:
   - mvn clean install -B
 deploy:
-  - if [[ "${TRAVIS_BRANCH}" = "master" ]] && [[ "${TRAVIS_PULL_REQUEST}" = "false" ]];
-    then
-      mvn deploy -B -Prelease-ossrh --settings .travis/deploy-settings.xml
-    fi
+  provider: script
+  script: scripts/deploy.sh
 cache:
   directories:
   - $HOME/.m2
