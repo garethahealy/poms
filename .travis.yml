@@ -21,7 +21,7 @@ script:
   - mvn clean install -B
 deploy:
   provider: script
-  script: scripts/deploy.sh
+  script: bash .travis/deploy.sh
   skip_cleanup: true
 cache:
   directories:
