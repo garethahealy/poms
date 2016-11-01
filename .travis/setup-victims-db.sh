@@ -7,5 +7,5 @@ mysql -u root -e "CREATE USER 'victims'@'localhost' IDENTIFIED BY 'victims';"
 mysql -u root -e "GRANT ALL PRIVILEGES ON * . * TO 'victims'@'localhost';"
 mysql -u root -e "FLUSH PRIVILEGES;"
 
-mysql -u victims -p victims -e "SHOW DATABASES LIKE 'victims';";
-mysql -u victims -p victims -e "SHOW TABLES IN victims;";
+mysql -u victims -pvictims -e "SHOW DATABASES LIKE 'victims';";
+mysql -u victims -pvictims -e "SHOW TABLES IN victims;";
