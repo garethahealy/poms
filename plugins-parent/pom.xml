@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.garethahealy.poms</groupId>
         <artifactId>poms-parent</artifactId>
-        <version>1.0.5</version>
+        <version>1.0.6-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
     <artifactId>plugins-parent</artifactId>
@@ -216,8 +216,8 @@
                     <compilerArgs>
                         <compilerArg>-Xlint:all</compilerArg>
                         <compilerArg>-Xlint:-processing</compilerArg>
-                        <compilerArg>-Werror</compilerArg>
                         <compilerArg>-Xdoclint:all</compilerArg>
+                        <compilerArg>-Werror</compilerArg>
                     </compilerArgs>
                 </configuration>
             </plugin>
