@@ -31,6 +31,7 @@ Collection of POMs which are used by all projects i am working on. Strucutre is 
 - mvn versions:commit
 
 ## Deploy to maven central
+- export GPG_TTY=$(tty)
 - mvn clean install deploy -Prelease-ossrh
 
 ## Deploy to local
