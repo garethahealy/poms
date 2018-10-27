@@ -8,7 +8,7 @@ env:
   - secure: KTk9JUIs5y9CDjMwaw5vtI78khRWv/FJ5sS04kJ70F1v6fPrFh6KdS7Yn/X9QzQyQjx/XZRnr69cndVwyLXUWqivj+s0MFzdgQpl9IKm9Zw4k3IR/LtNCdhB9Nv/4Fg+JIyqoYVrIMaSiAodr9ika3lBIqL3BBo5oFWiSnPB0IM=
 language: java
 jdk:
-- oraclejdk8
+- openjdk8
 before_install:
 - bash .travis/deploy-codesigning.sh
 install:
