@@ -60,7 +60,7 @@
     <properties>
         <maven-version>3.5.0</maven-version>
 
-        <building-tools-verson>1.0.6-SNAPSHOT</building-tools-verson>
+        <building-tools-verson>1.1.0-SNAPSHOT</building-tools-verson>
 
         <!-- Project settings -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
