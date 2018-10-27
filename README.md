@@ -3,27 +3,22 @@
 [![License](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)]()
 
 # POMs
-Collection of POMs which are used by all projects i am working on. Strucutre is as follows:
+Collection of POMs which are used by all projects i am working on. Structure is as follows:
 
 - projects-pom
-    - commons-bom
     - building-tools
+    - commons-bom
     - plugins-parent
-      - jboss-brms-parent
-      - jboss-eap-parent
-      - springboot-parent
-      - camel-parent
-      - camel-on-springboot-parent
-      - jboss-fuse-on-openshift-parent
+        - rh-jboss-eap-parent
+            - rh-dm-parent
+        - springboot-parent
     - osgi-plugins-parent
         - osgi-parent
-            - jboss-fuse-parent
-            - karaf-parent
+            - rh-fuse-on-karaf-parent
 
 # How to build projects
-- mvn clean install -DskipTests
-- mvn cobertura:cobertura
-- mvn sonar:sonar
+- mvn clean install
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=garethahealy-github -Dsonar.login={removed}
 
 # How to deploy
 ## Update version

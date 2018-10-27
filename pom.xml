@@ -12,7 +12,7 @@
     <groupId>com.garethahealy.poms</groupId>
     <artifactId>poms-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.6-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <name>POMs</name>
     <description>https://github.com/garethahealy</description>
 
@@ -51,23 +51,21 @@
         <module>plugins-parent</module>
         <module>osgi-plugins-parent</module>
         <module>osgi-parent</module>
-        <module>jboss-fuse-parent</module>
-        <module>jboss-fuse-on-openshift-parent</module>
-        <module>jboss-eap-parent</module>
-        <module>jboss-brms-parent</module>
+        <module>rh-fuse-on-karaf-parent</module>
+        <module>rh-jboss-eap-parent</module>
+        <module>rh-dm-parent</module>
         <module>springboot-parent</module>
-        <module>karaf-parent</module>
-        <module>camel-parent</module>
-        <module>camel-on-springboot-parent</module>
     </modules>
 
     <properties>
-        <maven-version>3.2.3</maven-version>
+        <maven-version>3.5.0</maven-version>
+
+        <building-tools-verson>1.0.6-SNAPSHOT</building-tools-verson>
 
         <!-- Project settings -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
 
         <!-- license -->
         <license.licenseName>apache_v2</license.licenseName>
@@ -76,13 +74,11 @@
         <license.canUpdateDescription>true</license.canUpdateDescription>
         <license.canUpdateCopyright>true</license.canUpdateCopyright>
 
-        <maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
+        <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
         <maven-gpg-plugin-version>1.6</maven-gpg-plugin-version>
-        <nexus-staging-maven-plugin-version>1.6.7</nexus-staging-maven-plugin-version>
-        <versions-maven-plugin-version>2.3</versions-maven-plugin-version>
-        <maven-enforcer-plugin-version>1.4.1</maven-enforcer-plugin-version>
-        <enforce-victims-rule>1.3.4</enforce-victims-rule>
-        <mysql-connector-version>5.1.39</mysql-connector-version>
+        <nexus-staging-maven-plugin-version>1.6.8</nexus-staging-maven-plugin-version>
+        <versions-maven-plugin-version>2.5</versions-maven-plugin-version>
+        <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
     </properties>
 
     <!-- Build plugins -->
@@ -178,56 +174,6 @@
                 </snapshotRepository>
             </distributionManagement>
         </profile>
-        <profile>
-            <id>travis-ci-victims</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-enforcer-plugin</artifactId>
-                        <version>${maven-enforcer-plugin-version}</version>
-                        <dependencies>
-                            <dependency>
-                                <groupId>com.redhat.victims</groupId>
-                                <artifactId>enforce-victims-rule</artifactId>
-                                <version>${enforce-victims-rule}</version>
-                                <type>jar</type>
-                            </dependency>
-                            <dependency>
-                                <groupId>mysql</groupId>
-                                <artifactId>mysql-connector-java</artifactId>
-                                <version>${mysql-connector-version}</version>
-                                <type>jar</type>
-                            </dependency>
-                        </dependencies>
-                        <executions>
-                            <execution>
-                                <id>enforce-rules</id>
-                                <goals>
-                                    <goal>enforce</goal>
-                                </goals>
-                                <configuration>
-                                    <rules>
-                                        <requireMavenVersion>
-                                            <version>3.0</version>
-                                        </requireMavenVersion>
-                                        <rule implementation="com.redhat.victims.VictimsRule">
-                                            <metadata>fatal</metadata>
-                                            <fingerprint>fatal</fingerprint>
-                                            <updates>daily</updates>
-                                            <jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
-                                            <jdbcUrl>jdbc:mysql://127.0.0.1/victims</jdbcUrl>
-                                            <jdbcUser>victims</jdbcUser>
-                                            <jdbcPass>victims</jdbcPass>
-                                        </rule>
-                                    </rules>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
     </profiles>
 
     <distributionManagement>
@@ -246,31 +192,20 @@
 
     <repositories>
         <repository>
-            <id>repository.redhat.com</id>
-            <name>RedHat TechPreview Repository</name>
+            <id>ga.repository.redhat.com</id>
+            <name>Red Hat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>tp.repository.redhat.com</id>
+            <name>Red Hat TechPreview Repository</name>
             <url>https://maven.repository.redhat.com/techpreview/all/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-        <repository>
-            <id>fusesource.jboss.com</id>
-            <name>Fuse Jboss Repository</name>
-            <url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-        <repository>
-            <id>fusesource-releases.jboss.com</id>
-            <name>Fuse Jboss Repository Realses</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/fs-releases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -303,9 +238,9 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>repository.redhat.com</id>
-            <name>RedHat TechPreview Repository</name>
-            <url>https://maven.repository.redhat.com/techpreview/all/</url>
+            <id>ga.repository.redhat.com</id>
+            <name>Red Hat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -314,9 +249,9 @@
             </releases>
         </pluginRepository>
         <pluginRepository>
-            <id>fusesource.jboss.com</id>
-            <name>Fuse Jboss Repository</name>
-            <url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
+            <id>tp.repository.redhat.com</id>
+            <name>Red Hat TechPreview Repository</name>
+            <url>https://maven.repository.redhat.com/techpreview/all/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

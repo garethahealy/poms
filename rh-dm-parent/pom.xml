@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.garethahealy.poms</groupId>
+        <artifactId>rh-jboss-eap-parent</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+        <relativePath>../rh-jboss-eap-parent</relativePath>
+    </parent>
+    <artifactId>rh-dm-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>POMs :: Red Hat Decision Manager Parent</name>
+
+    <properties>
+        <!-- RH DM versions -->
+        <rhdm-platform-bom.version>7.0.1.GA-redhat-2</rhdm-platform-bom.version>
+        <rhdm-platform-bom_org-kie.version>7.5.0.Final-redhat-6</rhdm-platform-bom_org-kie.version>
+    </properties>
+
+    <!-- Components -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- DM -->
+            <dependency>
+                <groupId>org.jboss.bom.rhdm</groupId>
+                <artifactId>rhdm-platform-bom</artifactId>
+                <version>${rhdm-platform-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- DM -->
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>${rhdm-platform-bom_org-kie.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

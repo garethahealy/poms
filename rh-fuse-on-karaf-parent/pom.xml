@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.garethahealy.poms</groupId>
+        <artifactId>osgi-parent</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+        <relativePath>../osgi-parent</relativePath>
+    </parent>
+    <artifactId>rh-fuse-on-karaf-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>POMs :: Red Hat Fuse on Karaf Parent</name>
+
+    <properties>
+        <!-- START commons-bom properties; below is here for features.xml property resolvers -->
+            <!-- Logging for local apps -->
+            <slf4j-api-verison>1.7.21</slf4j-api-verison>
+
+            <!-- Database -->
+            <hibernate-core-version>5.3.7.Final</hibernate-core-version>
+            <geronimo-jpa-version>1.1</geronimo-jpa-version>
+
+            <!-- Commons -->
+            <commons-dbcp2-version>2.5.0</commons-dbcp2-version>
+            <commons-pool2-version>2.4.2</commons-pool2-version>
+            <commons-lang3-version>3.8.1</commons-lang3-version>
+            <commons-io-version>2.6</commons-io-version>
+            <commons-collections4-version>4.2</commons-collections4-version>
+        <!-- END commons-bom properties -->
+
+        <!-- Fuse -->
+        <fuse-karaf-bom-version>7.1.0.fuse-710019-redhat-00002</fuse-karaf-bom-version>
+        <fuse-karaf-bom_org-apache-camel-version>2.21.0.fuse-710018-redhat-00001</fuse-karaf-bom_org-apache-camel-version>
+
+        <!-- Ranges for versions -->
+        <persistence-range-version>"[1.1,2)"</persistence-range-version>
+        <dbcp-range-version>"[2.4,2.6)"</dbcp-range-version>
+        <hibernate-range-version>"[5.2,5.4)"</hibernate-range-version>
+    </properties>
+
+    <!-- Components -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.garethahealy.poms</groupId>
+                <artifactId>commons-bom</artifactId>
+                <version>${building-tools-verson}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.redhat-fuse</groupId>
+                <artifactId>fuse-karaf-bom</artifactId>
+                <version>${fuse-karaf-bom-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Common BOM -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Core Camel -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-blueprint</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Testing: Camel -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test-blueprint</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-maven-plugin</artifactId>
+                <version>${fuse-karaf-bom_org-apache-camel-version}</version>
+                <configuration>
+                    <useBlueprint>true</useBlueprint>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
